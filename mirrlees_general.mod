@@ -2,7 +2,6 @@
 ##  Parameters taken as given
 
 
-
 param nI integer;
 set I = 1..nI;
 
@@ -12,7 +11,7 @@ param F {I};
 # Read in data
 read nI, {i in I} (wRaw[i], F[i]) < mirrlees_data.txt;
 
-param w {i in I} = wRaw[i]*10;
+param w {i in I} = wRaw[i]*10; # helpful numerically
 
 param ETI := 0.25;
 param k := 1/ETI;
