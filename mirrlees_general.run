@@ -1,0 +1,13 @@
+reset;
+option solver "/Applications/knitro-8.1.1-z-MacOSX-64/knitroampl/knitroampl";
+
+model mirrlees_general.mod;
+
+problem DiscreteMirrlees:
+    y, c,
+    SWF,
+    ICconstr, BudgetConstraint, yIncr;
+
+solve DiscreteMirrlees;
+
+csvdisplay w, c, y, atr, mtr > ampl_output.txt;
